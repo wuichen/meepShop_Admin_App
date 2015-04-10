@@ -37,3 +37,7 @@ html, body, #react {
     height: 100%;
     width: 100%;
 }
+
+.bar-tab .tab-item.active, .bar-tab .tab-item:active {
+  color: white !important;
+}

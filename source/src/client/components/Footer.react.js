@@ -1,5 +1,11 @@
 import React from 'react';
 
+let styles = {
+  footer: {
+    backgroundColor: '#27DCE0'
+  }
+}
+
 let Footer = React.createClass({
   render () {
     let isHomeSelected = this.props.isHomeSelected;
@@ -9,7 +15,7 @@ let Footer = React.createClass({
     let isMoreSelected = this.props.isMoreSelected;
     return (
       <footer>
-        <nav className="bar bar-tab">
+        <nav style={styles.footer} className="bar bar-tab">
           <a className={"tab-item" + (isHomeSelected === "true" ? " active" : "")} href="#">
             <span className="icon icon-home"></span>
             <span className="tab-label">Home</span>

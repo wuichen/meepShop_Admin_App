@@ -34,7 +34,7 @@ module.exports = {
       loader: 'file-loader'
     }, {
       test: /\.png$/i,
-      loaders: ['url-loader?limit=10000&mimetype=image/png']
+      loaders: ['url-loader?limit=40000&mimetype=image/png']
     }, {
       test: /\.gif$/i,
       loaders: ['url-loader?limit=10000&mimetype=image/gif']
