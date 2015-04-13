@@ -19,10 +19,10 @@ let OrderPage = React.createClass({
     orderStore.removeChangeListener(this._onChange);
 	},
   render () {
+    //took out <SearchBar/> from below for now
     return (
       <div>
         <Header text='Order' back="false" />
-        <SearchBar />
         <div className="content">
           <Orderlist orders={this.state.orders} />
         </div>

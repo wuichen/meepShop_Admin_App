@@ -1,4 +1,6 @@
 import React from 'react';
+import SearchModeStore from '../stores/SearchModeStore';
+import SearchModeAction from '../actions/SearchModeAction';
 
 let styles = {
   footer: {
@@ -7,6 +9,11 @@ let styles = {
 }
 
 let Footer = React.createClass({
+  closeSearchMode () {
+    SearchModeAction.change({
+      action: 'close'
+    });
+  },
   render () {
     let isHomeSelected = this.props.isHomeSelected;
     let isOrderSelected = this.props.isOrderSelected;
@@ -16,23 +23,23 @@ let Footer = React.createClass({
     return (
       <footer>
         <nav style={styles.footer} className="bar bar-tab">
-          <a className={"tab-item" + (isHomeSelected === "true" ? " active" : "")} href="#">
+          <a onClick={this.closeSearchMode} className={"tab-item" + (isHomeSelected === "true" ? " active" : "")} href="#">
             <span className="icon icon-home"></span>
             <span className="tab-label">Home</span>
           </a>
-          <a className={"tab-item" + (isOrderSelected === "true" ? " active" : "")} href="#/orders">
+          <a onClick={this.closeSearchMode} className={"tab-item" + (isOrderSelected === "true" ? " active" : "")} href="#/orders">
             <span className="icon icon-search"></span>
             <span className="tab-label">Order</span>
           </a>
-          <a className={"tab-item" + (isMessageSelected === "true" ? " active" : "")} href="#/message">
+          <a onClick={this.closeSearchMode} className={"tab-item" + (isMessageSelected === "true" ? " active" : "")} href="#/message">
             <span className="icon icon-info"></span>
             <span className="tab-label">Message</span>
           </a>
-          <a className={"tab-item" + (isNewsSelected === "true" ? " active" : "")} href="#/news">
+          <a onClick={this.closeSearchMode} className={"tab-item" + (isNewsSelected === "true" ? " active" : "")} href="#/news">
             <span className="icon icon-sound"></span>
             <span className="tab-label">News</span>
           </a>
-          <a className={"tab-item" + (isMoreSelected === "true" ? " active" : "")} href="#/more">
+          <a onClick={this.closeSearchMode} className={"tab-item" + (isMoreSelected === "true" ? " active" : "")} href="#/more">
             <span className="icon icon-more"></span>
             <span className="tab-label">More</span>
           </a>
